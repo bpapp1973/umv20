@@ -1,5 +1,5 @@
-//https://blog.angular-university.io/angular-http/
-//https://codingthesmartway.com/angular-4-3-httpclient-accessing-rest-web-services-with-angular/
+// https://blog.angular-university.io/angular-http/
+// https://codingthesmartway.com/angular-4-3-httpclient-accessing-rest-web-services-with-angular/
 import { Component, OnInit } from '@angular/core';
 import { CarsDataService } from './services/cars-data.service';
 import { Car } from './models/cars';
@@ -32,12 +32,16 @@ export class AppComponent implements OnInit {
 
   cars: Car[] = [];
 
+  newCar: Car = new Car();
+
   constructor(
     private carDataService: CarsDataService
   ) {
   }
 
   public ngOnInit() {
+    // this.carDataService.getAllCars();
+
     this.carDataService
       .getAllCars()
       .subscribe(
@@ -45,25 +49,19 @@ export class AppComponent implements OnInit {
           this.cars = cars;
         }
       );
+
+  }
+
+  get allCars() {
+    return this.carDataService.getAllCars();
   }
 
   onAddCar(car) {
-    this.carDataService
-      .addCar(car)
-      .subscribe(
-        (newCar) => {
-          this.cars = this.cars.concat(newCar);
-        }
-      );
+    this.carDataService.addCar(this.newCar);
+    this.newCar = new Car();
   }
 
   onRemoveCar(car) {
-    this.carDataService
-      .deleteCarById(car.id)
-      .subscribe(
-        (_) => {
-          this.cars = this.cars.filter((c) => c.id !== car.id);
-        }
-      );
+    this.carDataService.deleteCarById(car.id);
   }
 }

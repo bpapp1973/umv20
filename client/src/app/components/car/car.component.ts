@@ -1,5 +1,6 @@
-//ng generate component Car --module modules/cars/cars.module.ts
-//move under components folder
+// ng generate component Car --module modules/cars/cars.module.ts
+// move under components folder
+// https://www.sitepoint.com/understanding-component-architecture-angular/
 import { Component, OnInit } from '@angular/core';
 
 @Component({
