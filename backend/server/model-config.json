@@ -1,0 +1,292 @@
+{
+	"_meta": {
+		"sources": [
+			"loopback/common/models",
+			"loopback/server/models",
+			"../common/models",
+			"./models"
+		],
+		"mixins": [
+			"loopback/common/mixins",
+			"loopback/server/mixins",
+			"../common/mixins",
+			"./mixins"
+		]
+	},
+	"ViewSaleStatistic": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CompanyNotification": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewStockList": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewDeliveryDate": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewCrmPartner": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewWebstoreStuff": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewCrmEvent": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewWebstoreProducts": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewWebProducts": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewStock": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewProductPricelist": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Window": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"WebstoreShip": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"WebstoreProducts": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"WebstorePartners": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"WebstoreCategories": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Warehouse": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"UserWorkarea": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"RoutePlannerSettings": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"WebstoreShipTable": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"WebstorePaymode": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Webstore": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewInvoice": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewPlannedGoods": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductVatKey": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ViewPackingList": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductType": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductQuantity": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductPrice": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductLineDiscount": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductGrouped": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductGroup": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ProductAnaliticSettings": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Product": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Pricelist": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"PartnerTransport": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"PartnerGroup": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Partner": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"PackingList": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"PaperTemplate": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Notification": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"InvoiceGoods": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Invoice": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Modules": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"InvoiceNote": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Inventory": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"FileShare": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"FilePermission": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"FactoryDocs": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Factory": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"DocumentTemplate": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmStatus": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmQuestion": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmProcess": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmPartner": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmNewsletter": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmField": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmEvent": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Cars": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Benefit": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"BarcodeSettings": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"RestaurantSettings": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"CrmNewsletterSend": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Variables": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"User": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"AccessToken": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"ACL": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"RoleMapping": {
+		"dataSource": "postgres",
+		"public": true
+	},
+	"Role": {
+		"dataSource": "postgres",
+		"public": true
+	}
+}

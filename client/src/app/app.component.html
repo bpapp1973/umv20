@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<section class="todoapp">
+  <section class="main" *ngIf="cars.length > 0">
+    <ul class="cars-list">
+      <li *ngFor="let car of cars">
+        <div class="view">
+          <label>{{car.plateNumber}}</label>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
+
