@@ -1,3 +1,9 @@
-<p>
-  car works!
-</p>
+<div class="view">
+  <label>{{car.id}}</label>
+  <label>{{car.plateNumber}}</label>
+  <label>{{car.fuelNorm}}</label>
+  <label>{{car.fuelType}}</label>
+  <label>{{car.companyId}}</label>
+  <label>{{car.carsDeleted}}</label>
+  <button class="destroy" (click)="removeCar(car)"></button>
+</div>

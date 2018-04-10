@@ -4,12 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CarComponent } from './components/car/car.component';
+
 import { CarsService } from './services/cars.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,

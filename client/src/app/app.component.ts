@@ -8,19 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 const API_URL = environment.apiUrl;
-/*
-export class AppComponent implements OnInit {
-  title = 'Ügyfélmester 2.0';
-  results = '';
-  constructor(private http: HttpClient){
-  }
-  ngOnInit(): void {
-    this.http.get(API_URL+'/Cars/3').subscribe(data => {
-      console.log(data);
-    });
-  }
-}
-*/
+const APP_TITLE = environment.appTitle;
 
 @Component({
   selector: 'app-root',
@@ -28,11 +16,9 @@ export class AppComponent implements OnInit {
   styleUrls: ['./app.component.css'],
   providers: [CarsDataService]
 })
-export class AppComponent implements OnInit {
-
+export class AppComponent  implements OnInit  {
+  title = APP_TITLE;
   cars: Car[] = [];
-
-  newCar: Car = new Car();
 
   constructor(
     private carDataService: CarsDataService
@@ -40,8 +26,6 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-    // this.carDataService.getAllCars();
-
     this.carDataService
       .getAllCars()
       .subscribe(
@@ -51,17 +35,28 @@ export class AppComponent implements OnInit {
       );
 
   }
-
-  get allCars() {
+/*
+  get cars() {
     return this.carDataService.getAllCars();
   }
-
-  onAddCar(car) {
-    this.carDataService.addCar(this.newCar);
-    this.newCar = new Car();
+*/
+  onAddTodo(car) {
+    this.carDataService
+      .addCar(car)
+      .subscribe(
+        (newCar) => {
+          this.cars = this.cars.concat(newCar);
+        }
+      );
   }
 
-  onRemoveCar(car) {
-    this.carDataService.deleteCarById(car.id);
+  onRemoveTodo(car) {
+    this.carDataService
+      .deleteCarById(car.id)
+      .subscribe(
+        (_) => {
+          this.cars = this.cars.filter((c) => c.id !== car.id);
+        }
+      );
   }
 }

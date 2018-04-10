@@ -6,9 +6,6 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class CarsDataService {
 
-  // Placeholder for cars
-  cars: Car[] = [];
-
   constructor(private carService: CarsService) {
   }
 

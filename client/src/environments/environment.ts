@@ -5,7 +5,9 @@
 
 export const environment = {
   production: false,
+  appTitle: 'Ügyfélmester v2.0',
 
   // URL of development API
   apiUrl: 'http://localhost:3000/api'
+
 };
