@@ -2,6 +2,9 @@
 // move under modules folder
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../../material.module';
+
 import { CarsService } from '../../services/cars/cars.service';
 
 import { CarComponent } from '../../components/car/car.component';
@@ -14,7 +17,9 @@ import { CarEditComponent } from '../../components/car/car-edit/car-edit.compone
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     CarComponent
@@ -30,5 +35,6 @@ import { CarEditComponent } from '../../components/car/car-edit/car-edit.compone
       CarEditComponent
     ],
   providers: [CarsService],
+  entryComponents: [CarDetailsComponent]
 })
 export class CarsModule { }

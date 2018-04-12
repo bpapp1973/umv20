@@ -4,8 +4,8 @@
     {{ title }}!
   </h1>
 </div>
-
-<section class="carapp">
-  <app-car [cars]="cars"></app-car>
-</section>
-
+<div class="container">
+  <app-menu></app-menu>
+  <hr>
+  <router-outlet></router-outlet>
+</div>

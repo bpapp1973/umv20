@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output, Inject } from '@angular/core';
 import { Car } from '../../../models/cars';
 
 @Component({
@@ -7,7 +7,6 @@ import { Car } from '../../../models/cars';
   styleUrls: ['./car-list-item.component.css']
 })
 export class CarListItemComponent {
-
   @Input() car: Car;
 
   @Output()
@@ -24,4 +23,5 @@ export class CarListItemComponent {
     console.log('car-list-item - remove car: ' + car.plateNumber);
     this.remove.emit(car);
   }
+
 }
