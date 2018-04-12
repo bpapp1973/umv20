@@ -1,25 +1,30 @@
 // ng generate component Car --module modules/cars/cars.module.ts
 // move under components folder
 // https://www.sitepoint.com/understanding-component-architecture-angular/
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CarsService } from '../../services/cars/cars.service';
 import { Car } from '../../models/cars';
 
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  styleUrls: ['./car.component.css'],
+  providers: [CarsService]
 })
-export class CarComponent {
+export class CarComponent implements OnInit {
 
-  @Input() car: Car;
+  @Input() cars: Car[];
 
-  @Output()
-  remove: EventEmitter<Car> = new EventEmitter();
+  constructor(private carsService: CarsService) { }
 
-  constructor() { }
+  public ngOnInit() {
+    this.carsService
+      .getAllCars()
+      .subscribe(
+        (cars) => {
+          this.cars = cars;
+        }
+      );
 
-  onRemoveCar(car: Car) {
-    this.remove.emit(car);
   }
-
 }

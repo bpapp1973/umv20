@@ -1,9 +1,3 @@
-<div class="view">
-  <label>{{car.id}}</label>
-  <label>{{car.plateNumber}}</label>
-  <label>{{car.fuelNorm}}</label>
-  <label>{{car.fuelType}}</label>
-  <label>{{car.companyId}}</label>
-  <label>{{car.carsDeleted}}</label>
-  <button class="destroy" (click)="removeCar(car)"></button>
-</div>
+<app-car-header [cars]="cars"></app-car-header>
+<app-car-list [cars]="cars"></app-car-list>
+<app-car-footer [cars]="cars"></app-car-footer>

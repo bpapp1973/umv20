@@ -1,0 +1,14 @@
+<tr>
+  <td>{{car.id}}</td>
+  <td>{{car.plateNumber}}</td>
+  <td>{{car.fuelNorm}}</td>
+  <td>{{car.fuelType}}</td>
+  <td>{{car.companyId}}</td>
+  <td>{{car.carsDeleted}}</td>
+  <td>
+    <button class="view" (click)="viewCar(car)">V</button>
+  </td>
+  <td>
+    <button class="destroy" (click)="removeCar(car)">X</button>
+  </td>
+</tr>

@@ -4,13 +4,8 @@
     {{ title }}!
   </h1>
 </div>
+
 <section class="carapp">
-  <section class="main" *ngIf="cars.length > 0">
-    <ul class="cars-list">
-      <li *ngFor="let car of cars">
-        <app-car [car]="car"></app-car>
-      </li>
-    </ul>
-  </section>
+  <app-car [cars]="cars"></app-car>
 </section>
 
