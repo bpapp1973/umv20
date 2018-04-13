@@ -15,12 +15,23 @@ export class CarListComponent {
   constructor(private carsService: CarsService) { }
 
   onViewCar(car: Car) {
-    console.log('car-list - view car: ' + car.plateNumber);
-    this.carsService.getCarById(car.id);
+    this.carsService.getCarById(car.id)
+      .subscribe(
+        (newCar) => {
+          car = newCar;
+        }
+      );
+    console.log('CarListComponent.onViewCar ' + car.fuelNorm);
   }
 
   onRemoveCar(car: Car) {
     console.log('car-list - remove car: ' + car.plateNumber);
     this.carsService.deleteCarById(car.id);
+//    .subscribe(
+//      (_) => {
+//        console.log('subscribe');
+//        this.cars = this.cars.filter((c) => c.id !== car.id);
+//      }
+//    );
   }
 }

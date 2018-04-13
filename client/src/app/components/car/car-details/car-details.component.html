@@ -1,10 +1,24 @@
-<h2 mat-dialog-title>Car Detail works</h2>
-
+<h2 mat-dialog-title>Car Details</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.car.id" placeholder="Id" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.car.plateNumber" placeholder="plateNumber" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.car.fuelNorm" placeholder="fuelNorm" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.car.fuelType" placeholder="fuelType" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.car.companyId" placeholder="companyId" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.car.carsDeleted" placeholder="carsDeleted" disabled>
+  </mat-form-field>
+</div>
 <mat-dialog-actions>
   <button class="mat-raised-button" (click)="close()">Close</button>
-  <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
 </mat-dialog-actions>
-
-<p>
-  car-details works!
-</p>

@@ -12,11 +12,11 @@
     </tr>
     <tbody *ngFor="let car of cars">
       <tr>
-      <app-car-list-item 
-        [car]="car" 
-        (view)="onViewCar($event)"
-        (remove)="onRemoveCar($event)">
-      </app-car-list-item>
+        <app-car-list-item 
+          [car]="car" 
+          (view)="onViewCar($event)" 
+          (remove)="onRemoveCar($event)">
+        </app-car-list-item>
       </tr>
     </tbody>
   </table>
