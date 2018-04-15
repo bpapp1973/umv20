@@ -27,7 +27,6 @@ export class CarsService {
 
   // API: GET /cars/:id
   public getCarById(carId: number): Observable<Car> {
-    console.log('CarsService.getCarById');
     return this.http
       .get(API_URL + '/' + carId)
       .map(response => {

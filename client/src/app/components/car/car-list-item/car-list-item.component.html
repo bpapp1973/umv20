@@ -6,9 +6,9 @@
   <td>{{car.companyId}}</td>
   <td>{{car.carsDeleted}}</td>
   <td>
-    <button mat-raised-button (click)="viewCar()">View</button>
+    <button mat-raised-button (click)="viewCar(car)">View</button>
   </td>
   <td>
-    <button class="destroy" (click)="removeCar(car)">X</button>
+    <button mat-raised-button (click)="removeCar(car)">X</button>
   </td>
 </tr>
