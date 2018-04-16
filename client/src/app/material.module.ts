@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +31,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatChipsModule } from '@angular/material/chips';
 @NgModule({
     imports: [
         BrowserAnimationsModule,
@@ -63,7 +64,8 @@ import { MatTableModule } from '@angular/material/table';
         MatTooltipModule,
         MatPaginatorModule,
         MatSortModule,
-        MatTableModule
+        MatTableModule,
+        MatChipsModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -96,7 +98,8 @@ import { MatTableModule } from '@angular/material/table';
         MatTooltipModule,
         MatPaginatorModule,
         MatSortModule,
-        MatTableModule
+        MatTableModule,
+        MatChipsModule
     ]
 })
 export class MaterialModule { }

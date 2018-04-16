@@ -45,36 +45,9 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    <mat-row *matRowDef="let row; columns: displayedColumns;"  (click) = "viewCar(row)">
     </mat-row>
   </mat-table>
 
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
-
-
-<!--
-<section class="main" *ngIf="cars">
-  <table border="1px">
-    <tr>
-      <td>id</td>
-      <td>plateNumber</td>
-      <td>fuelNorm</td>
-      <td>fuelType</td>
-      <td>companyId</td>
-      <td>carsDeleted</td>
-      <td>View</td>
-      <td>Delete</td>
-    </tr>
-    <tbody *ngFor="let car of cars">
-      <tr>
-        <app-car-list-item 
-          [car]="car" 
-          (view)="onViewCar($event)" 
-          (remove)="onRemoveCar($event)">
-        </app-car-list-item>
-      </tr>
-    </tbody>
-  </table>
-</section>
--->

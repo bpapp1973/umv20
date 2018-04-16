@@ -11,4 +11,8 @@ export class CarHeaderComponent {
   @Input() cars: Car[];
 
   constructor() { }
+
+  addCar() {
+    console.log('CarHeaderComponent.addCar');
+  }
 }

@@ -7,7 +7,6 @@ import { CarDetailsComponent } from '../car-details/car-details.component';
   selector: 'app-car-list-item',
   templateUrl: './car-list-item.component.html',
   styleUrls: ['./car-list-item.component.css'],
-  outputs: ['view:change','remove:change']
 })
 export class CarListItemComponent {
 
@@ -15,7 +14,7 @@ export class CarListItemComponent {
 
   @Output() remove: EventEmitter<Car> = new EventEmitter();
   @Output() view: EventEmitter<Car> = new EventEmitter();
- 
+
   constructor(public dialog: MatDialog) { }
 
   viewCar(car: Car): void {
@@ -25,12 +24,11 @@ export class CarListItemComponent {
       data: { car }
     });
 
-    dialogRef.afterClosed().subscribe(result => { car
-    });
+    dialogRef.afterClosed().subscribe(result => { });
   }
 
   removeCar(car: Car): void {
-    console.log('CarListItemComponent.removeCar',car.plateNumber);
+    console.log('CarListItemComponent.removeCar', car.plateNumber);
     this.remove.emit(car);
   }
 

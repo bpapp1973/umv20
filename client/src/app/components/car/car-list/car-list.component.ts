@@ -1,7 +1,12 @@
-import { Component, Input, ViewChild } from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { CarsService } from '../../../services/cars/cars.service';
 import { Car } from '../../../models/cars';
+import { CarDetailsComponent } from '../car-details/car-details.component';
 
 @Component({
   selector: 'app-car-list',
@@ -9,7 +14,7 @@ import { Car } from '../../../models/cars';
   styleUrls: ['./car-list.component.css'],
   providers: [CarsService]
 })
-export class CarListComponent {
+export class CarListComponent implements AfterViewInit {
 
   @Input() cars: Car[];
 
@@ -17,20 +22,36 @@ export class CarListComponent {
   @ViewChild(MatSort) sort: MatSort;
 
   displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', 'carsDeleted'];
-  dataSource: MatTableDataSource<Car>;
+  dataSource = new MatTableDataSource();
 
-  constructor(private carsService: CarsService) {
-    this.dataSource = new MatTableDataSource(this.cars);
-  }
-
-  onViewCar(car: Car) {
-    const id = this.cars.indexOf(car);
-    this.carsService.getCarById(car.id)
+  constructor(private carsService: CarsService, public dialog: MatDialog) {
+    this.carsService
+      .getAllCars()
       .subscribe(
-        (newCar) => {
-          this.cars[id] = newCar;
+        (cars) => {
+          this.dataSource.data = cars;
         }
       );
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
+  }
+
+  viewCar(selectedCar: Car): void {
+    const dialogRef = this.dialog.open(CarDetailsComponent, {
+      width: '500px',
+      data: { selectedCar }
+    });
+
+    dialogRef.afterClosed().subscribe(result => { });
   }
 
   onRemoveCar(car: Car) {
@@ -43,21 +64,4 @@ export class CarListComponent {
       );
   }
 
-  /**
-   * Set the paginator and sort after the view init since this component will
-   * be able to query its view for the initialized paginator and sort.
-   */
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-  }
 }
-
-
-
