@@ -18,7 +18,7 @@ export class CarListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', 'carsDeleted'];
+  displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', 'carsDeleted', 'remove'];
   dataSource = new MatTableDataSource();
 
   constructor(private carsService: CarsService, private dialog: MatDialog) {
@@ -51,7 +51,7 @@ export class CarListComponent implements AfterViewInit {
     dialogRef.afterClosed().subscribe(result => { });
   }
 
-  onRemoveCar(car: Car) {
+  removeCar(car: Car) {
     this.carsService.deleteCarById(car.id)
       .subscribe(
         (_) => {
