@@ -14,6 +14,7 @@ import { CarListItemComponent } from '../../components/car/car-list-item/car-lis
 import { CarFooterComponent } from '../../components/car/car-footer/car-footer.component';
 import { CarDetailsComponent } from '../../components/car/car-details/car-details.component';
 import { CarEditComponent } from '../../components/car/car-edit/car-edit.component';
+import { CarCreateComponent } from '../../components/car/car-create/car-create.component';
 
 @NgModule({
   imports: [
@@ -32,9 +33,13 @@ import { CarEditComponent } from '../../components/car/car-edit/car-edit.compone
       CarListItemComponent,
       CarFooterComponent,
       CarDetailsComponent,
-      CarEditComponent
+      CarEditComponent,
+      CarCreateComponent
     ],
   providers: [CarsService],
-  entryComponents: [CarDetailsComponent]
+  entryComponents: [
+    CarDetailsComponent,
+    CarEditComponent,
+    CarCreateComponent]
 })
 export class CarsModule { }

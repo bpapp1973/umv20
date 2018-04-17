@@ -27,7 +27,6 @@ export class CarsService {
 
   // API: GET /cars/:id
   public getCarById(carId: number): Observable<Car> {
-    // console.log('CarsService.getCarById', carId);
     return this.http
       .get(API_URL + '/' + carId)
       .map(response => {
@@ -57,8 +56,6 @@ export class CarsService {
   }
 
   public deleteCarById(carId: number): Observable<null> {
-    console.log('CarsService - deleteCarById: ' + carId);
-    console.log('CarsService - deleteCarById: ' + API_URL + '/' + carId);
     return this.http
       .delete(API_URL + '/' + carId)
       .map(response => null)
@@ -66,6 +63,8 @@ export class CarsService {
   }
 
   private handleError(error: Response | any) {
+    const errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error('CarsService::handleError', error);
     return Observable.throw(error);
   }

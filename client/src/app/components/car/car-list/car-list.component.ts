@@ -1,9 +1,6 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { CarsService } from '../../../services/cars/cars.service';
 import { Car } from '../../../models/cars';
 import { CarDetailsComponent } from '../car-details/car-details.component';
@@ -24,7 +21,7 @@ export class CarListComponent implements AfterViewInit {
   displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', 'carsDeleted'];
   dataSource = new MatTableDataSource();
 
-  constructor(private carsService: CarsService, public dialog: MatDialog) {
+  constructor(private carsService: CarsService, private dialog: MatDialog) {
     this.carsService
       .getAllCars()
       .subscribe(

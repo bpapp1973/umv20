@@ -9,8 +9,8 @@ import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu.component';
-import { CONST_ROUTING } from './app.routing';
-import { CarDetailsComponent } from './components/car/car-details/car-details.component';
+import { AppRoutingModule } from './app.routing.module';
+// import { CarDetailsComponent } from './components/car/car-details/car-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { CarDetailsComponent } from './components/car/car-details/car-details.co
     HttpModule,
     FormsModule,
     CarsModule,
-    CONST_ROUTING,
+    AppRoutingModule,
     MaterialModule
   ],
   exports: [

@@ -1,6 +1,9 @@
 <mat-divider></mat-divider>
 <footer class="footer" *ngIf="cars">
   <span class="cars-count">
-    <strong>{{cars.length}}</strong> {{cars.length == 1 ? 'car' : 'cars'}} altogether</span>
+    <mat-panel-description>
+      <strong>{{cars.length}}</strong> {{cars.length == 1 ? 'car' : 'cars'}} altogether
+    </mat-panel-description>
+  </span>
 </footer>
 <mat-divider></mat-divider>

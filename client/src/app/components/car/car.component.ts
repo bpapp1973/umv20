@@ -25,6 +25,6 @@ export class CarComponent implements OnInit {
           this.cars = cars;
         }
       );
-
   }
+
 }
