@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>$MODEL_NAME_CAMEL$ Details</h2>
+  <form>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.id" name="id" placeholder="Id" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.plateNumber" name="plateNumber" placeholder="plateNumber" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.fuelNorm" name="fuelNorm" placeholder="fuelNorm" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.fuelType" name="fuelType" placeholder="fuelType" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.companyId" name="companyId" placeholder="companyId" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.$MODEL_NAME$sDeleted" name="$MODEL_NAME$sDeleted" placeholder="$MODEL_NAME$sDeleted" disabled>
+  </mat-form-field>
+</form>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

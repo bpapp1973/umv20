@@ -1,0 +1,72 @@
+import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { Http, Response } from '@angular/http';
+import { $MODEL_NAME_CAMEL$ } from '../../models/$MODEL_NAME$s';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
+const API_URL = environment.apiUrl + '/$MODEL_NAME_CAMEL$s';
+
+@Injectable()
+export class $MODEL_NAME_CAMEL$sService {
+
+  constructor(private http: Http) { }
+
+  // API: GET /$MODEL_NAME$s
+  public getAll$MODEL_NAME_CAMEL$s(): Observable<$MODEL_NAME_CAMEL$[]> {
+    return this.http
+      .get(API_URL)
+      .map(response => {
+        const $MODEL_NAME$s = response.json();
+        return $MODEL_NAME$s.map(($MODEL_NAME$) => new $MODEL_NAME_CAMEL$($MODEL_NAME$));
+      })
+      .catch(this.handleError);
+  }
+
+  // API: GET /$MODEL_NAME$s/:id
+  public get$MODEL_NAME_CAMEL$ById($MODEL_NAME$Id: number): Observable<$MODEL_NAME_CAMEL$> {
+    return this.http
+      .get(API_URL + '/' + $MODEL_NAME$Id)
+      .map(response => {
+        return new $MODEL_NAME_CAMEL$(response.json());
+      })
+      .catch(this.handleError);
+  }
+
+  // API: POST /$MODEL_NAME$s
+  public create$MODEL_NAME_CAMEL$($MODEL_NAME$: $MODEL_NAME_CAMEL$): Observable<$MODEL_NAME_CAMEL$> {
+    return this.http
+      .post(API_URL, $MODEL_NAME$)
+      .map(response => {
+        return new $MODEL_NAME_CAMEL$(response.json());
+      })
+      .catch(this.handleError);
+  }
+
+  // API: PUT /$MODEL_NAME$s/:id
+  public update$MODEL_NAME_CAMEL$($MODEL_NAME$: $MODEL_NAME_CAMEL$): Observable<$MODEL_NAME_CAMEL$> {
+    return this.http
+      .put(API_URL + '/' + $MODEL_NAME$.id, $MODEL_NAME$)
+      .map(response => {
+        return new $MODEL_NAME_CAMEL$(response.json());
+      })
+      .catch(this.handleError);
+  }
+
+  public delete$MODEL_NAME_CAMEL$ById($MODEL_NAME$Id: number): Observable<null> {
+    return this.http
+      .delete(API_URL + '/' + $MODEL_NAME$Id)
+      .map(response => null)
+      .catch(this.handleError);
+  }
+
+  private handleError(error: Response | any) {
+    const errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    console.error('$MODEL_NAME_CAMEL$sService::handleError', error);
+    return Observable.throw(error);
+  }
+
+}

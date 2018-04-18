@@ -1,0 +1,22 @@
+import { Component, Inject } from '@angular/core';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
+import { $MODEL_NAME_CAMEL$CreateComponent } from '../$MODEL_NAME$-create/$MODEL_NAME$-create.component';
+import { $MODEL_NAME_CAMEL$sService } from '../../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-$MODEL_NAME$-header',
+  templateUrl: './$MODEL_NAME$-header.component.html',
+  styleUrls: ['./$MODEL_NAME$-header.component.css'],
+  providers: [$MODEL_NAME_CAMEL$sService]
+})
+export class $MODEL_NAME_CAMEL$HeaderComponent {
+
+  constructor(private $MODEL_NAME$sService: $MODEL_NAME_CAMEL$sService, private router: Router ) {
+  }
+
+  add$MODEL_NAME_CAMEL$(): void {
+    this.router.navigate(['$MODEL_NAME$s/create']);
+  }
+}

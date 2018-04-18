@@ -11,50 +11,50 @@
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-      <mat-cell *matCellDef="let car"> {{car.id}} </mat-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.id}} </mat-cell>
     </ng-container>
 
     <!-- plateNumber Column -->
     <ng-container matColumnDef="plateNumber">
       <mat-header-cell *matHeaderCellDef mat-sort-header> plateNumber </mat-header-cell>
-      <mat-cell *matCellDef="let car"> {{car.plateNumber}} </mat-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.plateNumber}} </mat-cell>
     </ng-container>
 
     <!-- fuelNorm Column -->
     <ng-container matColumnDef="fuelNorm">
       <mat-header-cell *matHeaderCellDef mat-sort-header> fuelNorm </mat-header-cell>
-      <mat-cell *matCellDef="let car"> {{car.fuelNorm}} </mat-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.fuelNorm}} </mat-cell>
     </ng-container>
 
     <!-- fuelType Column -->
     <ng-container matColumnDef="fuelType">
       <mat-header-cell *matHeaderCellDef mat-sort-header> fuelType </mat-header-cell>
-      <mat-cell *matCellDef="let car"> {{car.fuelType}} </mat-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.fuelType}} </mat-cell>
     </ng-container>
 
     <!-- companyId Column -->
     <ng-container matColumnDef="companyId">
       <mat-header-cell *matHeaderCellDef mat-sort-header> companyId </mat-header-cell>
-      <mat-cell *matCellDef="let car"> {{car.companyId}} </mat-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.companyId}} </mat-cell>
     </ng-container>
 
-    <!-- carsDeleted Column -->
-    <ng-container matColumnDef="carsDeleted">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> carsDeleted </mat-header-cell>
-      <mat-cell *matCellDef="let car"> {{car.carsDeleted}} </mat-cell>
+    <!-- $MODEL_NAME$sDeleted Column -->
+    <ng-container matColumnDef="$MODEL_NAME$sDeleted">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> $MODEL_NAME$sDeleted </mat-header-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.$MODEL_NAME$sDeleted}} </mat-cell>
     </ng-container>
 
     <!-- Options Column -->
     <ng-container matColumnDef="options">
       <mat-header-cell *matHeaderCellDef mat-sort-header> options </mat-header-cell>
-      <mat-cell *matCellDef="let car">{{ car.options }}
-        <button mat-mini-fab color="accent" (click)="showCar(car.id)" matTooltip="View">
+      <mat-cell *matCellDef="let $MODEL_NAME$">{{ $MODEL_NAME$.options }}
+        <button mat-mini-fab color="accent" (click)="show$MODEL_NAME_CAMEL$($MODEL_NAME$.id)" matTooltip="View">
           <mat-icon aria-label="View">visibility</mat-icon>
         </button>
-        <button mat-mini-fab color="primary" (click)="editCar(car.id)" matTooltip="Edit">
+        <button mat-mini-fab color="primary" (click)="edit$MODEL_NAME_CAMEL$($MODEL_NAME$.id)" matTooltip="Edit">
           <mat-icon aria-label="Edit">mode_edit</mat-icon>
         </button>
-        <button mat-mini-fab color="warn" (click)="removeCar(car)" matTooltip="Delete">
+        <button mat-mini-fab color="warn" (click)="remove$MODEL_NAME_CAMEL$($MODEL_NAME$)" matTooltip="Delete">
           <mat-icon aria-label="Delete">delete</mat-icon>
         </button>
       </mat-cell>

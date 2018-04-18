@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { $MODEL_NAME_CAMEL$Component } from './$MODEL_NAME$.component';
+
+describe('$MODEL_NAME_CAMEL$Component', () => {
+  let component: $MODEL_NAME_CAMEL$Component;
+  let fixture: ComponentFixture<$MODEL_NAME_CAMEL$Component>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ $MODEL_NAME_CAMEL$Component ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent($MODEL_NAME_CAMEL$Component);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

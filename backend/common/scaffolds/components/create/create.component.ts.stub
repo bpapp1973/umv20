@@ -1,0 +1,36 @@
+import { Component, EventEmitter, Output, Inject } from '@angular/core';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
+import { $MODEL_NAME_CAMEL$sService } from '../../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-$MODEL_NAME$-create',
+  templateUrl: './$MODEL_NAME$-create.component.html',
+  styleUrls: ['./$MODEL_NAME$-create.component.css'],
+  providers: [$MODEL_NAME_CAMEL$sService]
+})
+export class $MODEL_NAME_CAMEL$CreateComponent {
+
+  $MODEL_NAME$: $MODEL_NAME_CAMEL$;
+
+  constructor(private $MODEL_NAME$sService: $MODEL_NAME_CAMEL$sService, private router: Router) {
+    this.$MODEL_NAME$ = new $MODEL_NAME_CAMEL$();
+  }
+
+  cancel() {
+    this.$MODEL_NAME$ = null;
+    this.router.navigate(['$MODEL_NAME$s']);
+  }
+
+  create$MODEL_NAME_CAMEL$($MODEL_NAME$: $MODEL_NAME_CAMEL$) {
+    this.$MODEL_NAME$sService.create$MODEL_NAME_CAMEL$($MODEL_NAME$)
+      .subscribe(
+        (new$MODEL_NAME_CAMEL$) => {
+          this.$MODEL_NAME$ = new$MODEL_NAME_CAMEL$;
+        }
+      );
+    this.router.navigate(['$MODEL_NAME$s']);
+  }
+
+}

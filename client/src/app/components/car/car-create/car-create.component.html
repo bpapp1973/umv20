@@ -1,25 +1,25 @@
 <h2 mat-dialog-title>Create Car</h2>
 <div mat-dialog-content>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.car.id" placeholder="Id" disabled>
+    <input matInput [(ngModel)]="car.id" placeholder="Id" disabled>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.car.plateNumber" placeholder="plateNumber" required>
+    <input matInput [(ngModel)]="car.plateNumber" placeholder="plateNumber" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.car.fuelNorm" placeholder="fuelNorm" required>
+    <input matInput [(ngModel)]="car.fuelNorm" placeholder="fuelNorm" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.car.fuelType" placeholder="fuelType" required>
+    <input matInput [(ngModel)]="car.fuelType" placeholder="fuelType" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.car.companyId" placeholder="companyId" required>
+    <input matInput [(ngModel)]="car.companyId" placeholder="companyId" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.car.carsDeleted" placeholder="carsDeleted" required>
+    <input matInput [(ngModel)]="car.carsDeleted" placeholder="carsDeleted" required>
   </mat-form-field>
 </div>
 <mat-dialog-actions>
   <button class="mat-button" (click)="cancel()">Cancel</button>
-  <button class="mat-raised-button" [mat-dialog-close]="data.car" (click)="createCar(data.car)" cdkFocusInitial>Save</button>
+  <button class="mat-raised-button" (click)="createCar(car)" cdkFocusInitial>Save</button>
 </mat-dialog-actions>

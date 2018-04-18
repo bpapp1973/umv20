@@ -1,0 +1,15 @@
+import { Component, Input } from '@angular/core';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
+
+@Component({
+  selector: 'app-$MODEL_NAME$-footer',
+  templateUrl: './$MODEL_NAME$-footer.component.html',
+  styleUrls: ['./$MODEL_NAME$-footer.component.css']
+})
+export class $MODEL_NAME_CAMEL$FooterComponent {
+
+  @Input() $MODEL_NAME$s: $MODEL_NAME_CAMEL$[];
+
+  constructor() { }
+
+}

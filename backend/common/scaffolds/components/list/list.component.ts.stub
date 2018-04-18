@@ -1,40 +1,40 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { CarsService } from '../../../services/cars/cars.service';
-import { Car } from '../../../models/cars';
-import { CarDetailsComponent } from '../car-details/car-details.component';
+import { $MODEL_NAME_CAMEL$sService } from '../../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
+import { $MODEL_NAME_CAMEL$DetailsComponent } from '../$MODEL_NAME$-details/$MODEL_NAME$-details.component';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from '../../common/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
-  selector: 'app-car-list',
-  templateUrl: './car-list.component.html',
-  styleUrls: ['./car-list.component.css'],
-  providers: [CarsService]
+  selector: 'app-$MODEL_NAME$-list',
+  templateUrl: './$MODEL_NAME$-list.component.html',
+  styleUrls: ['./$MODEL_NAME$-list.component.css'],
+  providers: [$MODEL_NAME_CAMEL$sService]
 })
-export class CarListComponent implements AfterViewInit {
+export class $MODEL_NAME_CAMEL$ListComponent implements AfterViewInit {
 
-  @Input() cars: Car[];
+  @Input() $MODEL_NAME$s: $MODEL_NAME_CAMEL$[];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   dialogRef: MatDialogRef<ConfirmationDialogComponent>;
 
-  displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', 'carsDeleted', 'options'];
+  displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', '$MODEL_NAME$sDeleted', 'options'];
   dataSource = new MatTableDataSource();
 
-  constructor(private carsService: CarsService, private router: Router, private dialog: MatDialog) {
+  constructor(private $MODEL_NAME$sService: $MODEL_NAME_CAMEL$sService, private router: Router, private dialog: MatDialog) {
   }
 
   ngAfterViewInit() {
-    this.carsService
-      .getAllCars()
+    this.$MODEL_NAME$sService
+      .getAll$MODEL_NAME_CAMEL$s()
       .subscribe(
-        (cars) => {
-          this.dataSource.data = cars;
+        ($MODEL_NAME$s) => {
+          this.dataSource.data = $MODEL_NAME$s;
         }
       );
     this.dataSource.paginator = this.paginator;
@@ -47,15 +47,15 @@ export class CarListComponent implements AfterViewInit {
     this.dataSource.filter = filterValue;
   }
 
-  showCar(id: number) {
-    this.router.navigate(['cars/details', id]);
+  show$MODEL_NAME_CAMEL$(id: number) {
+    this.router.navigate(['$MODEL_NAME$s/details', id]);
   }
 
-  editCar(id: number) {
-    this.router.navigate(['cars/edit', id]);
+  edit$MODEL_NAME_CAMEL$(id: number) {
+    this.router.navigate(['$MODEL_NAME$s/edit', id]);
   }
 
-  removeCar(car: Car) {
+  remove$MODEL_NAME_CAMEL$($MODEL_NAME$: $MODEL_NAME_CAMEL$) {
     this.dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       disableClose: false
     });
@@ -63,11 +63,11 @@ export class CarListComponent implements AfterViewInit {
 
     this.dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.carsService.deleteCarById(car.id)
+        this.$MODEL_NAME$sService.delete$MODEL_NAME_CAMEL$ById($MODEL_NAME$.id)
           .subscribe(
             (_) => {
               console.log('subscribe');
-              this.cars = this.cars.filter((c) => c.id !== car.id);
+              this.$MODEL_NAME$s = this.$MODEL_NAME$s.filter((c) => c.id !== $MODEL_NAME$.id);
             }
           );
       }

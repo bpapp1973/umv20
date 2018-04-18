@@ -1,28 +1,36 @@
 import { Component, EventEmitter, Output, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Car } from '../../../models/cars';
+import { CarsService } from '../../../services/cars/cars.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-create',
   templateUrl: './car-create.component.html',
-  styleUrls: ['./car-create.component.css']
+  styleUrls: ['./car-create.component.css'],
+  providers: [CarsService]
 })
 export class CarCreateComponent {
 
-  @Output() create: EventEmitter<Car> = new EventEmitter();
+  car: Car;
 
-  constructor(public dialogRef: MatDialogRef<CarCreateComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private carsService: CarsService, private router: Router) {
+    this.car = new Car();
+  }
 
   cancel() {
-    console.log('CarCreateComponent.cancel');
-    this.data.car = null;
-    this.dialogRef.close();
+    this.car = null;
+    this.router.navigate(['cars']);
   }
 
   createCar(car: Car) {
-    this.create.emit(car);
-    console.log('fired');
+    this.carsService.createCar(car)
+      .subscribe(
+        (newCar) => {
+          this.car = newCar;
+        }
+      );
+    this.router.navigate(['cars']);
   }
 
 }

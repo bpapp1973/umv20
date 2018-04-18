@@ -10,7 +10,7 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu.component';
 import { AppRoutingModule } from './app.routing.module';
-// import { CarDetailsComponent } from './components/car/car-details/car-details.component';
+import { ConfirmationDialogComponent } from './components/common/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [

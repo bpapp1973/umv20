@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Edit $MODEL_NAME_CAMEL$</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.id" placeholder="Id" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.plateNumber" placeholder="plateNumber" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.fuelNorm" placeholder="fuelNorm" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.fuelType" placeholder="fuelType" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.companyId" placeholder="companyId" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="$MODEL_NAME$.$MODEL_NAME$sDeleted" placeholder="$MODEL_NAME$sDeleted" required>
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+  <button class="mat-button" (click)="cancel()">Cancel</button>
+  <button class="mat-raised-button" (click)="update$MODEL_NAME_CAMEL$($MODEL_NAME$)" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

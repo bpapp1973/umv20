@@ -1,0 +1,3 @@
+<app-$MODEL_NAME$-header ></app-$MODEL_NAME$-header>
+<app-$MODEL_NAME$-list [$MODEL_NAME$s]="$MODEL_NAME$s"></app-$MODEL_NAME$-list>
+<app-$MODEL_NAME$-footer [$MODEL_NAME$s]="$MODEL_NAME$s"></app-$MODEL_NAME$-footer>

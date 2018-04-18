@@ -1,0 +1,27 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { $MODEL_NAME_CAMEL$sService } from '../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+import { $MODEL_NAME_CAMEL$ } from '../../models/$MODEL_NAME$s';
+
+@Component({
+  selector: 'app-$MODEL_NAME$',
+  templateUrl: './$MODEL_NAME$.component.html',
+  styleUrls: ['./$MODEL_NAME$.component.css'],
+  providers: [$MODEL_NAME_CAMEL$sService]
+})
+export class $MODEL_NAME_CAMEL$Component implements OnInit {
+
+  @Input() $MODEL_NAME$s: $MODEL_NAME_CAMEL$[];
+
+  constructor(private $MODEL_NAME$sService: $MODEL_NAME_CAMEL$sService) { }
+
+  public ngOnInit() {
+    this.$MODEL_NAME$sService
+      .getAll$MODEL_NAME_CAMEL$s()
+      .subscribe(
+        ($MODEL_NAME$s) => {
+          this.$MODEL_NAME$s = $MODEL_NAME$s;
+        }
+      );
+  }
+
+}

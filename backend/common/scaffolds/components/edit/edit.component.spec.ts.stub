@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { $MODEL_NAME_CAMEL$EditComponent } from './$MODEL_NAME$-edit.component';
+
+describe('$MODEL_NAME_CAMEL$EditComponent', () => {
+  let component: $MODEL_NAME_CAMEL$EditComponent;
+  let fixture: ComponentFixture<$MODEL_NAME_CAMEL$EditComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ $MODEL_NAME_CAMEL$EditComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent($MODEL_NAME_CAMEL$EditComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,0 +1,15 @@
+import { TestBed, inject } from '@angular/core/testing';
+
+import { $MODEL_NAME_CAMEL$sService } from './$MODEL_NAME$s.service';
+
+describe('$MODEL_NAME_CAMEL$sService', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [$MODEL_NAME_CAMEL$sService]
+    });
+  });
+
+  it('should be created', inject([$MODEL_NAME_CAMEL$sService], (service: $MODEL_NAME_CAMEL$sService) => {
+    expect(service).toBeTruthy();
+  }));
+});

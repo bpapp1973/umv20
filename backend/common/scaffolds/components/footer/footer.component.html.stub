@@ -1,0 +1,9 @@
+<mat-divider></mat-divider>
+<footer class="footer" *ngIf="$MODEL_NAME$s">
+  <span class="$MODEL_NAME$s-count">
+    <mat-panel-description>
+      <strong>{{$MODEL_NAME$s.length}}</strong> {{$MODEL_NAME$s.length == 1 ? '$MODEL_NAME$' : '$MODEL_NAME$s'}} altogether
+    </mat-panel-description>
+  </span>
+</footer>
+<mat-divider></mat-divider>

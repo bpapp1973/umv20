@@ -2,6 +2,8 @@
   "name": "Cars",
   "options": {
     "idInjection": false,
+    "strict": "validate",
+    "persistUndefinedAsNull": true,
     "postgresql": {
       "schema": "public",
       "table": "_cars"
@@ -10,18 +12,19 @@
   "properties": {
     "id": {
       "type": "Number",
-      "required": true,
+      "generated": true,
+      "required": false,
       "length": null,
       "precision": 64,
       "scale": 0,
-      "id": 1,
+      "id": true,
       "postgresql": {
         "columnName": "id",
         "dataType": "bigint",
         "dataLength": null,
         "dataPrecision": 64,
         "dataScale": 0,
-        "nullable": "NO"
+        "nullable": true
       }
     },
     "plateNumber": {

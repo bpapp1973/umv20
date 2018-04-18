@@ -1,0 +1,45 @@
+// ng generate module $MODEL_NAME$s
+// move under modules folder
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../../material.module';
+
+import { $MODEL_NAME_CAMEL$sService } from '../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+
+import { $MODEL_NAME_CAMEL$Component } from '../../components/$MODEL_NAME$/$MODEL_NAME$.component';
+import { $MODEL_NAME_CAMEL$HeaderComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-header/$MODEL_NAME$-header.component';
+import { $MODEL_NAME_CAMEL$ListComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-list/$MODEL_NAME$-list.component';
+import { $MODEL_NAME_CAMEL$FooterComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-footer/$MODEL_NAME$-footer.component';
+import { $MODEL_NAME_CAMEL$DetailsComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-details/$MODEL_NAME$-details.component';
+import { $MODEL_NAME_CAMEL$EditComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-edit/$MODEL_NAME$-edit.component';
+import { $MODEL_NAME_CAMEL$CreateComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-create/$MODEL_NAME$-create.component';
+import { ConfirmationDialogComponent } from '../../components/common/confirmation-dialog/confirmation-dialog.component';
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    MaterialModule
+  ],
+  exports: [
+    $MODEL_NAME_CAMEL$Component
+  ],
+  declarations:
+    [
+      $MODEL_NAME_CAMEL$Component,
+      $MODEL_NAME_CAMEL$HeaderComponent,
+      $MODEL_NAME_CAMEL$ListComponent,
+      $MODEL_NAME_CAMEL$FooterComponent,
+      $MODEL_NAME_CAMEL$DetailsComponent,
+      $MODEL_NAME_CAMEL$EditComponent,
+      $MODEL_NAME_CAMEL$CreateComponent,
+      ConfirmationDialogComponent
+    ],
+  providers: [$MODEL_NAME_CAMEL$sService],
+  entryComponents: [
+    $MODEL_NAME_CAMEL$DetailsComponent,
+    $MODEL_NAME_CAMEL$EditComponent,
+    $MODEL_NAME_CAMEL$CreateComponent,
+    ConfirmationDialogComponent]
+})
+export class $MODEL_NAME_CAMEL$sModule { }

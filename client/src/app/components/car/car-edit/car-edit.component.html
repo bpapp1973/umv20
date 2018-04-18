@@ -1,3 +1,25 @@
-<p>
-  car-edit works!
-</p>
+<h2 mat-dialog-title>Edit Car</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="car.id" placeholder="Id" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="car.plateNumber" placeholder="plateNumber" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="car.fuelNorm" placeholder="fuelNorm" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="car.fuelType" placeholder="fuelType" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="car.companyId" placeholder="companyId" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="car.carsDeleted" placeholder="carsDeleted" required>
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+  <button class="mat-button" (click)="cancel()">Cancel</button>
+  <button class="mat-raised-button" (click)="updateCar(car)" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

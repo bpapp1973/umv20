@@ -1,0 +1,5 @@
+<mat-toolbar color="primary">
+    <span>$MODEL_NAME_CAMEL$s</span>
+    <span class="toolbar-spacer"></span>
+    <button mat-raised-button color="warn" (click)="add$MODEL_NAME_CAMEL$()" matTooltip="Create new $MODEL_NAME$"><span ></span>+</button>
+</mat-toolbar>

@@ -1,24 +1,24 @@
 <h2 mat-dialog-title>Car Details</h2>
-<div mat-dialog-content>
+  <form>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.selectedCar.id" placeholder="Id" disabled>
+    <input matInput [(ngModel)]="car.id" name="id" placeholder="Id" disabled>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.selectedCar.plateNumber" placeholder="plateNumber" disabled>
+    <input matInput [(ngModel)]="car.plateNumber" name="plateNumber" placeholder="plateNumber" disabled>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.selectedCar.fuelNorm" placeholder="fuelNorm" disabled>
+    <input matInput [(ngModel)]="car.fuelNorm" name="fuelNorm" placeholder="fuelNorm" disabled>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.selectedCar.fuelType" placeholder="fuelType" disabled>
+    <input matInput [(ngModel)]="car.fuelType" name="fuelType" placeholder="fuelType" disabled>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.selectedCar.companyId" placeholder="companyId" disabled>
+    <input matInput [(ngModel)]="car.companyId" name="companyId" placeholder="companyId" disabled>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.selectedCar.carsDeleted" placeholder="carsDeleted" disabled>
+    <input matInput [(ngModel)]="car.carsDeleted" name="carsDeleted" placeholder="carsDeleted" disabled>
   </mat-form-field>
-</div>
+</form>
 <mat-dialog-actions>
   <button class="mat-raised-button" (click)="close()">Close</button>
 </mat-dialog-actions>
