@@ -1,0 +1,4 @@
+import { $MODEL_NAME_CAMEL$Component } from './components/$MODEL_NAME$/$MODEL_NAME$.component';
+import { $MODEL_NAME_CAMEL$DetailsComponent } from './components/$MODEL_NAME$/$MODEL_NAME$-details/$MODEL_NAME$-details.component';
+import { $MODEL_NAME_CAMEL$CreateComponent } from './components/$MODEL_NAME$/$MODEL_NAME$-create/$MODEL_NAME$-create.component';
+import { $MODEL_NAME_CAMEL$EditComponent } from './components/$MODEL_NAME$/$MODEL_NAME$-edit/$MODEL_NAME$-edit.component';

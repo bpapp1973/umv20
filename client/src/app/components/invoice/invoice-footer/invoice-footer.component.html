@@ -1,0 +1,9 @@
+<mat-divider></mat-divider>
+<footer class="footer" *ngIf="invoices">
+  <span class="invoices-count">
+    <mat-panel-description>
+      <strong>{{invoices.length}}</strong> {{invoices.length == 1 ? 'invoice' : 'invoices'}} altogether
+    </mat-panel-description>
+  </span>
+</footer>
+<mat-divider></mat-divider>

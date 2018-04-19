@@ -1,0 +1,4 @@
+{ path: '$MODEL_NAME$', component: $MODEL_NAME_CAMEL$Component },
+    { path: '$MODEL_NAME$/details/:id', component: $MODEL_NAME_CAMEL$DetailsComponent },
+    { path: '$MODEL_NAME$/create', component: $MODEL_NAME_CAMEL$CreateComponent },
+    { path: '$MODEL_NAME$/edit/:id', component: $MODEL_NAME_CAMEL$EditComponent },

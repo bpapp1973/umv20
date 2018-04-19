@@ -1,11 +1,9 @@
-// ng generate module $MODEL_NAME$s
-// move under modules folder
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material.module';
 
-import { $MODEL_NAME_CAMEL$sService } from '../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+import { $MODEL_NAME_CAMEL$Service } from '../../services/$MODEL_NAME$/$MODEL_NAME$.service';
 
 import { $MODEL_NAME_CAMEL$Component } from '../../components/$MODEL_NAME$/$MODEL_NAME$.component';
 import { $MODEL_NAME_CAMEL$HeaderComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-header/$MODEL_NAME$-header.component';
@@ -35,11 +33,11 @@ import { ConfirmationDialogComponent } from '../../components/common/confirmatio
       $MODEL_NAME_CAMEL$CreateComponent,
       ConfirmationDialogComponent
     ],
-  providers: [$MODEL_NAME_CAMEL$sService],
+  providers: [$MODEL_NAME_CAMEL$Service],
   entryComponents: [
     $MODEL_NAME_CAMEL$DetailsComponent,
     $MODEL_NAME_CAMEL$EditComponent,
     $MODEL_NAME_CAMEL$CreateComponent,
     ConfirmationDialogComponent]
 })
-export class $MODEL_NAME_CAMEL$sModule { }
+export class $MODEL_NAME_CAMEL$Module { }

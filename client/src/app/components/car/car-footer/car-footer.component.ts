@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Car } from '../../../models/cars';
+import { Car } from '../../../models/car';
 
 @Component({
   selector: 'app-car-footer',

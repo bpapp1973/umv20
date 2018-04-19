@@ -1,25 +1,25 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
-import { $MODEL_NAME_CAMEL$sService } from '../../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$';
+import { $MODEL_NAME_CAMEL$Service } from '../../../services/$MODEL_NAME$/$MODEL_NAME$.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-$MODEL_NAME$-details',
   templateUrl: './$MODEL_NAME$-details.component.html',
   styleUrls: ['./$MODEL_NAME$-details.component.css'],
-  providers: [$MODEL_NAME_CAMEL$sService]
+  providers: [$MODEL_NAME_CAMEL$Service]
 })
 export class $MODEL_NAME_CAMEL$DetailsComponent implements OnInit {
 
   $MODEL_NAME$: $MODEL_NAME_CAMEL$;
   id: number;
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute, private $MODEL_NAME$sService: $MODEL_NAME_CAMEL$sService ) {
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private $MODEL_NAME$Service: $MODEL_NAME_CAMEL$Service ) {
   }
 
   ngOnInit() {
     this.id = this.activeRoute.snapshot.params['id'];
-    this.$MODEL_NAME$sService
+    this.$MODEL_NAME$Service
       .get$MODEL_NAME_CAMEL$ById(this.id)
       .subscribe(
         ($MODEL_NAME$) => {
@@ -29,7 +29,7 @@ export class $MODEL_NAME_CAMEL$DetailsComponent implements OnInit {
   }
 
   close() {
-    this.router.navigate(['$MODEL_NAME$s']);
+    this.router.navigate(['$MODEL_NAME$']);
  //   this.dialogRef.close();
   }
 }

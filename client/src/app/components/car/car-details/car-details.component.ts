@@ -1,25 +1,25 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { Car } from '../../../models/cars';
-import { CarsService } from '../../../services/cars/cars.service';
+import { Car } from '../../../models/car';
+import { CarService } from '../../../services/car/car.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-car-details',
   templateUrl: './car-details.component.html',
   styleUrls: ['./car-details.component.css'],
-  providers: [CarsService]
+  providers: [CarService]
 })
 export class CarDetailsComponent implements OnInit {
 
   car: Car;
   id: number;
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute, private carsService: CarsService ) {
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private carService: CarService ) {
   }
 
   ngOnInit() {
     this.id = this.activeRoute.snapshot.params['id'];
-    this.carsService
+    this.carService
       .getCarById(this.id)
       .subscribe(
         (car) => {
@@ -29,7 +29,6 @@ export class CarDetailsComponent implements OnInit {
   }
 
   close() {
-    this.router.navigate(['cars']);
- //   this.dialogRef.close();
+    this.router.navigate(['car']);
   }
 }

@@ -1,0 +1,5 @@
+    <!-- $FIELD_NAME$ Column -->
+    <ng-container matColumnDef="$FIELD_NAME$">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> $FIELD_NAME$ </mat-header-cell>
+      <mat-cell *matCellDef="let $MODEL_NAME$"> {{$MODEL_NAME$.$FIELD_NAME$}} </mat-cell>
+    </ng-container>

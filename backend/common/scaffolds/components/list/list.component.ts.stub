@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { $MODEL_NAME_CAMEL$sService } from '../../../services/$MODEL_NAME$s/$MODEL_NAME$s.service';
-import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
+import { $MODEL_NAME_CAMEL$Service } from '../../../services/$MODEL_NAME$/$MODEL_NAME$.service';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$';
 import { $MODEL_NAME_CAMEL$DetailsComponent } from '../$MODEL_NAME$-details/$MODEL_NAME$-details.component';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ConfirmationDialogComponent } from '../../common/confirmation-dialog/co
   selector: 'app-$MODEL_NAME$-list',
   templateUrl: './$MODEL_NAME$-list.component.html',
   styleUrls: ['./$MODEL_NAME$-list.component.css'],
-  providers: [$MODEL_NAME_CAMEL$sService]
+  providers: [$MODEL_NAME_CAMEL$Service]
 })
 export class $MODEL_NAME_CAMEL$ListComponent implements AfterViewInit {
 
@@ -23,14 +23,14 @@ export class $MODEL_NAME_CAMEL$ListComponent implements AfterViewInit {
 
   dialogRef: MatDialogRef<ConfirmationDialogComponent>;
 
-  displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', '$MODEL_NAME$sDeleted', 'options'];
+  displayedColumns = [$MODEL_FIELDS$, 'options'];
   dataSource = new MatTableDataSource();
 
-  constructor(private $MODEL_NAME$sService: $MODEL_NAME_CAMEL$sService, private router: Router, private dialog: MatDialog) {
+  constructor(private $MODEL_NAME$Service: $MODEL_NAME_CAMEL$Service, private router: Router, private dialog: MatDialog) {
   }
 
   ngAfterViewInit() {
-    this.$MODEL_NAME$sService
+    this.$MODEL_NAME$Service
       .getAll$MODEL_NAME_CAMEL$s()
       .subscribe(
         ($MODEL_NAME$s) => {
@@ -48,11 +48,11 @@ export class $MODEL_NAME_CAMEL$ListComponent implements AfterViewInit {
   }
 
   show$MODEL_NAME_CAMEL$(id: number) {
-    this.router.navigate(['$MODEL_NAME$s/details', id]);
+    this.router.navigate(['$MODEL_NAME$/details', id]);
   }
 
   edit$MODEL_NAME_CAMEL$(id: number) {
-    this.router.navigate(['$MODEL_NAME$s/edit', id]);
+    this.router.navigate(['$MODEL_NAME$/edit', id]);
   }
 
   remove$MODEL_NAME_CAMEL$($MODEL_NAME$: $MODEL_NAME_CAMEL$) {
@@ -63,7 +63,7 @@ export class $MODEL_NAME_CAMEL$ListComponent implements AfterViewInit {
 
     this.dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.$MODEL_NAME$sService.delete$MODEL_NAME_CAMEL$ById($MODEL_NAME$.id)
+        this.$MODEL_NAME$Service.delete$MODEL_NAME_CAMEL$ById($MODEL_NAME$.id)
           .subscribe(
             (_) => {
               console.log('subscribe');

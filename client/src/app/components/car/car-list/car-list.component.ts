@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { CarsService } from '../../../services/cars/cars.service';
-import { Car } from '../../../models/cars';
+import { CarService } from '../../../services/car/car.service';
+import { Car } from '../../../models/car';
 import { CarDetailsComponent } from '../car-details/car-details.component';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { ConfirmationDialogComponent } from '../../common/confirmation-dialog/co
   selector: 'app-car-list',
   templateUrl: './car-list.component.html',
   styleUrls: ['./car-list.component.css'],
-  providers: [CarsService]
+  providers: [CarService]
 })
 export class CarListComponent implements AfterViewInit {
 
@@ -26,11 +26,11 @@ export class CarListComponent implements AfterViewInit {
   displayedColumns = ['id', 'plateNumber', 'fuelNorm', 'fuelType', 'companyId', 'carsDeleted', 'options'];
   dataSource = new MatTableDataSource();
 
-  constructor(private carsService: CarsService, private router: Router, private dialog: MatDialog) {
+  constructor(private carService: CarService, private router: Router, private dialog: MatDialog) {
   }
 
   ngAfterViewInit() {
-    this.carsService
+    this.carService
       .getAllCars()
       .subscribe(
         (cars) => {
@@ -48,11 +48,11 @@ export class CarListComponent implements AfterViewInit {
   }
 
   showCar(id: number) {
-    this.router.navigate(['cars/details', id]);
+    this.router.navigate(['car/details', id]);
   }
 
   editCar(id: number) {
-    this.router.navigate(['cars/edit', id]);
+    this.router.navigate(['car/edit', id]);
   }
 
   removeCar(car: Car) {
@@ -63,7 +63,7 @@ export class CarListComponent implements AfterViewInit {
 
     this.dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.carsService.deleteCarById(car.id)
+        this.carService.deleteCarById(car.id)
           .subscribe(
             (_) => {
               console.log('subscribe');

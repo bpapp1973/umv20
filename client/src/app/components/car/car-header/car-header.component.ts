@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { Car } from '../../../models/cars';
+import { Car } from '../../../models/car';
 import { CarCreateComponent } from '../car-create/car-create.component';
-import { CarsService } from '../../../services/cars/cars.service';
+import { CarService } from '../../../services/car/car.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
   selector: 'app-car-header',
   templateUrl: './car-header.component.html',
   styleUrls: ['./car-header.component.css'],
-  providers: [CarsService]
+  providers: [CarService]
 })
 export class CarHeaderComponent {
 
-  constructor(private carsService: CarsService, private router: Router ) {
+  constructor(private carService: CarService, private router: Router ) {
   }
 
   addCar(): void {
-    this.router.navigate(['cars/create']);
+    this.router.navigate(['car/create']);
   }
 }

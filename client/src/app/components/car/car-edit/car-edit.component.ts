@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../../../models/cars';
-import { CarsService } from '../../../services/cars/cars.service';
+import { Car } from '../../../models/car';
+import { CarService } from '../../../services/car/car.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
   selector: 'app-car-edit',
   templateUrl: './car-edit.component.html',
   styleUrls: ['./car-edit.component.css'],
-  providers: [CarsService]
+  providers: [CarService]
 })
 export class CarEditComponent implements OnInit {
 
   car: Car;
   id: number;
 
-  constructor(private carsService: CarsService, private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private carService: CarService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.id = this.activeRoute.snapshot.params['id'];
-    this.carsService
+    this.carService
       .getCarById(this.id)
       .subscribe(
         (car) => {
@@ -31,17 +31,17 @@ export class CarEditComponent implements OnInit {
 
   cancel() {
     this.car = null;
-    this.router.navigate(['cars']);
+    this.router.navigate(['car']);
   }
 
   updateCar(car: Car) {
-    this.carsService.updateCar(car)
+    this.carService.updateCar(car)
       .subscribe(
         (updatedCar) => {
           this.car = updatedCar;
         }
       );
-    this.router.navigate(['cars']);
+    this.router.navigate(['car']);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$s';
+import { $MODEL_NAME_CAMEL$ } from '../../../models/$MODEL_NAME$';
 
 @Component({
   selector: 'app-$MODEL_NAME$-footer',

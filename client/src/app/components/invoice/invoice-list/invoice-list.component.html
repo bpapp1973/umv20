@@ -1,0 +1,185 @@
+<div class="table-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="table-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.id}} </mat-cell>
+    </ng-container>
+    <!-- invoiceType Column -->
+    <ng-container matColumnDef="invoiceType">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceType </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceType}} </mat-cell>
+    </ng-container>
+    <!-- invoiceTypeName Column -->
+    <ng-container matColumnDef="invoiceTypeName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceTypeName </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceTypeName}} </mat-cell>
+    </ng-container>
+    <!-- invoiceWarehouseMove Column -->
+    <ng-container matColumnDef="invoiceWarehouseMove">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceWarehouseMove </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceWarehouseMove}} </mat-cell>
+    </ng-container>
+    <!-- invoicePartnerId Column -->
+    <ng-container matColumnDef="invoicePartnerId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoicePartnerId </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoicePartnerId}} </mat-cell>
+    </ng-container>
+    <!-- invoicePartnerName Column -->
+    <ng-container matColumnDef="invoicePartnerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoicePartnerName </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoicePartnerName}} </mat-cell>
+    </ng-container>
+    <!-- invoicePartnerTransport Column -->
+    <ng-container matColumnDef="invoicePartnerTransport">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoicePartnerTransport </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoicePartnerTransport}} </mat-cell>
+    </ng-container>
+    <!-- invoicePaymode Column -->
+    <ng-container matColumnDef="invoicePaymode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoicePaymode </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoicePaymode}} </mat-cell>
+    </ng-container>
+    <!-- invoiceStartDate Column -->
+    <ng-container matColumnDef="invoiceStartDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceStartDate </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceStartDate}} </mat-cell>
+    </ng-container>
+    <!-- invoiceEndDate Column -->
+    <ng-container matColumnDef="invoiceEndDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceEndDate </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceEndDate}} </mat-cell>
+    </ng-container>
+    <!-- invoicePayDate Column -->
+    <ng-container matColumnDef="invoicePayDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoicePayDate </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoicePayDate}} </mat-cell>
+    </ng-container>
+    <!-- invoiceCurrency Column -->
+    <ng-container matColumnDef="invoiceCurrency">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceCurrency </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceCurrency}} </mat-cell>
+    </ng-container>
+    <!-- invoicePricelist Column -->
+    <ng-container matColumnDef="invoicePricelist">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoicePricelist </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoicePricelist}} </mat-cell>
+    </ng-container>
+    <!-- invoiceNetto Column -->
+    <ng-container matColumnDef="invoiceNetto">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceNetto </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceNetto}} </mat-cell>
+    </ng-container>
+    <!-- invoiceVat Column -->
+    <ng-container matColumnDef="invoiceVat">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceVat </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceVat}} </mat-cell>
+    </ng-container>
+    <!-- invoiceBrutto Column -->
+    <ng-container matColumnDef="invoiceBrutto">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceBrutto </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceBrutto}} </mat-cell>
+    </ng-container>
+    <!-- invoiceId Column -->
+    <ng-container matColumnDef="invoiceId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceId </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceId}} </mat-cell>
+    </ng-container>
+    <!-- invoiceNumber Column -->
+    <ng-container matColumnDef="invoiceNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceNumber </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceNumber}} </mat-cell>
+    </ng-container>
+    <!-- invoiceUserId Column -->
+    <ng-container matColumnDef="invoiceUserId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceUserId </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceUserId}} </mat-cell>
+    </ng-container>
+    <!-- companyId Column -->
+    <ng-container matColumnDef="companyId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> companyId </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.companyId}} </mat-cell>
+    </ng-container>
+    <!-- deleted Column -->
+    <ng-container matColumnDef="deleted">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> deleted </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.deleted}} </mat-cell>
+    </ng-container>
+    <!-- invoiceCreated Column -->
+    <ng-container matColumnDef="invoiceCreated">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceCreated </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceCreated}} </mat-cell>
+    </ng-container>
+    <!-- invoiceNote Column -->
+    <ng-container matColumnDef="invoiceNote">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceNote </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceNote}} </mat-cell>
+    </ng-container>
+    <!-- invoiceBenefitCode Column -->
+    <ng-container matColumnDef="invoiceBenefitCode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceBenefitCode </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceBenefitCode}} </mat-cell>
+    </ng-container>
+    <!-- transferPrice Column -->
+    <ng-container matColumnDef="transferPrice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> transferPrice </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.transferPrice}} </mat-cell>
+    </ng-container>
+    <!-- transferDate Column -->
+    <ng-container matColumnDef="transferDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> transferDate </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.transferDate}} </mat-cell>
+    </ng-container>
+    <!-- invoiceSale Column -->
+    <ng-container matColumnDef="invoiceSale">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> invoiceSale </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.invoiceSale}} </mat-cell>
+    </ng-container>
+    <!-- html Column -->
+    <ng-container matColumnDef="html">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> html </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.html}} </mat-cell>
+    </ng-container>
+    <!-- userNote Column -->
+    <ng-container matColumnDef="userNote">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> userNote </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.userNote}} </mat-cell>
+    </ng-container>
+    <!-- emailSend Column -->
+    <ng-container matColumnDef="emailSend">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> emailSend </mat-header-cell>
+      <mat-cell *matCellDef="let invoice"> {{invoice.emailSend}} </mat-cell>
+    </ng-container>
+
+    
+    <!-- Options Column -->
+    <ng-container matColumnDef="options">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> options </mat-header-cell>
+      <mat-cell *matCellDef="let invoice">{{ invoice.options }}
+        <button mat-mini-fab color="accent" (click)="showInvoice(invoice.id)" matTooltip="View">
+          <mat-icon aria-label="View">visibility</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="editInvoice(invoice.id)" matTooltip="Edit">
+          <mat-icon aria-label="Edit">mode_edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" (click)="removeInvoice(invoice)" matTooltip="Delete">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

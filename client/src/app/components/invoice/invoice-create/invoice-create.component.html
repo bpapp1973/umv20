@@ -1,0 +1,128 @@
+<h2 mat-dialog-title>Create Invoice</h2>
+<div mat-dialog-content>
+    <mat-form-field>
+    <input matInput [(ngModel)]="invoice.id" name="id" placeholder="id" disabled>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceType" name="invoiceType" placeholder="invoiceType" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceTypeName" name="invoiceTypeName" placeholder="invoiceTypeName" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceWarehouseMove" name="invoiceWarehouseMove" placeholder="invoiceWarehouseMove" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoicePartnerId" name="invoicePartnerId" placeholder="invoicePartnerId" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoicePartnerName" name="invoicePartnerName" placeholder="invoicePartnerName" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoicePartnerTransport" name="invoicePartnerTransport" placeholder="invoicePartnerTransport" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoicePaymode" name="invoicePaymode" placeholder="invoicePaymode" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceStartDate" name="invoiceStartDate" placeholder="invoiceStartDate" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceEndDate" name="invoiceEndDate" placeholder="invoiceEndDate" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoicePayDate" name="invoicePayDate" placeholder="invoicePayDate" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceCurrency" name="invoiceCurrency" placeholder="invoiceCurrency" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoicePricelist" name="invoicePricelist" placeholder="invoicePricelist" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceNetto" name="invoiceNetto" placeholder="invoiceNetto" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceVat" name="invoiceVat" placeholder="invoiceVat" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceBrutto" name="invoiceBrutto" placeholder="invoiceBrutto" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceId" name="invoiceId" placeholder="invoiceId" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceNumber" name="invoiceNumber" placeholder="invoiceNumber" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceUserId" name="invoiceUserId" placeholder="invoiceUserId" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.companyId" name="companyId" placeholder="companyId" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.deleted" name="deleted" placeholder="deleted" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceCreated" name="invoiceCreated" placeholder="invoiceCreated" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceNote" name="invoiceNote" placeholder="invoiceNote" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceBenefitCode" name="invoiceBenefitCode" placeholder="invoiceBenefitCode" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.transferPrice" name="transferPrice" placeholder="transferPrice" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.transferDate" name="transferDate" placeholder="transferDate" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.invoiceSale" name="invoiceSale" placeholder="invoiceSale" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.html" name="html" placeholder="html" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.userNote" name="userNote" placeholder="userNote" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="invoice.emailSend" name="emailSend" placeholder="emailSend" >
+  </mat-form-field>
+
+
+</div>
+<mat-dialog-actions>
+  <button class="mat-button" (click)="cancel()">Cancel</button>
+  <button class="mat-raised-button" (click)="createInvoice(invoice)" cdkFocusInitial>Save</button>
+</mat-dialog-actions>
