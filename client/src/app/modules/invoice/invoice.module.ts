@@ -12,7 +12,7 @@ import { InvoiceFooterComponent } from '../../components/invoice/invoice-footer/
 import { InvoiceDetailsComponent } from '../../components/invoice/invoice-details/invoice-details.component';
 import { InvoiceEditComponent } from '../../components/invoice/invoice-edit/invoice-edit.component';
 import { InvoiceCreateComponent } from '../../components/invoice/invoice-create/invoice-create.component';
-import { ConfirmationDialogComponent } from '../../components/common/confirmation-dialog/confirmation-dialog.component';
+// import { ConfirmationDialogComponent } from '../../components/common/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,13 +31,14 @@ import { ConfirmationDialogComponent } from '../../components/common/confirmatio
       InvoiceDetailsComponent,
       InvoiceEditComponent,
       InvoiceCreateComponent,
-      ConfirmationDialogComponent
+//      ConfirmationDialogComponent
     ],
   providers: [InvoiceService],
   entryComponents: [
     InvoiceDetailsComponent,
     InvoiceEditComponent,
     InvoiceCreateComponent,
-    ConfirmationDialogComponent]
+//    ConfirmationDialogComponent,
+    ]
 })
 export class InvoiceModule { }

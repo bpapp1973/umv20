@@ -1,0 +1,250 @@
+<div class="table-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="table-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.id}} </mat-cell>
+    </ng-container>
+    <!-- partnerName Column -->
+    <ng-container matColumnDef="partnerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerName </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerName}} </mat-cell>
+    </ng-container>
+    <!-- partnerZip Column -->
+    <ng-container matColumnDef="partnerZip">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerZip </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerZip}} </mat-cell>
+    </ng-container>
+    <!-- partnerCountry Column -->
+    <ng-container matColumnDef="partnerCountry">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerCountry </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerCountry}} </mat-cell>
+    </ng-container>
+    <!-- partnerCity Column -->
+    <ng-container matColumnDef="partnerCity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerCity </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerCity}} </mat-cell>
+    </ng-container>
+    <!-- partnerAddress Column -->
+    <ng-container matColumnDef="partnerAddress">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerAddress </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerAddress}} </mat-cell>
+    </ng-container>
+    <!-- partnerVatnumberEu Column -->
+    <ng-container matColumnDef="partnerVatnumberEu">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerVatnumberEu </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerVatnumberEu}} </mat-cell>
+    </ng-container>
+    <!-- partnerVatnumberHu Column -->
+    <ng-container matColumnDef="partnerVatnumberHu">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerVatnumberHu </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerVatnumberHu}} </mat-cell>
+    </ng-container>
+    <!-- partnerIbanNumber Column -->
+    <ng-container matColumnDef="partnerIbanNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerIbanNumber </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerIbanNumber}} </mat-cell>
+    </ng-container>
+    <!-- partnerAccount Column -->
+    <ng-container matColumnDef="partnerAccount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerAccount </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerAccount}} </mat-cell>
+    </ng-container>
+    <!-- partnerCredit Column -->
+    <ng-container matColumnDef="partnerCredit">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerCredit </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerCredit}} </mat-cell>
+    </ng-container>
+    <!-- partnerPromt Column -->
+    <ng-container matColumnDef="partnerPromt">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerPromt </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerPromt}} </mat-cell>
+    </ng-container>
+    <!-- partnerPaymode Column -->
+    <ng-container matColumnDef="partnerPaymode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerPaymode </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerPaymode}} </mat-cell>
+    </ng-container>
+    <!-- partnerMainpricelist Column -->
+    <ng-container matColumnDef="partnerMainpricelist">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMainpricelist </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMainpricelist}} </mat-cell>
+    </ng-container>
+    <!-- partnerGroup Column -->
+    <ng-container matColumnDef="partnerGroup">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerGroup </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerGroup}} </mat-cell>
+    </ng-container>
+    <!-- partnerWarehouse Column -->
+    <ng-container matColumnDef="partnerWarehouse">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerWarehouse </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerWarehouse}} </mat-cell>
+    </ng-container>
+    <!-- partnerCurrency Column -->
+    <ng-container matColumnDef="partnerCurrency">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerCurrency </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerCurrency}} </mat-cell>
+    </ng-container>
+    <!-- partnerMainpreference Column -->
+    <ng-container matColumnDef="partnerMainpreference">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMainpreference </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMainpreference}} </mat-cell>
+    </ng-container>
+    <!-- partnerTransportZip Column -->
+    <ng-container matColumnDef="partnerTransportZip">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerTransportZip </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerTransportZip}} </mat-cell>
+    </ng-container>
+    <!-- partnerTransportCity Column -->
+    <ng-container matColumnDef="partnerTransportCity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerTransportCity </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerTransportCity}} </mat-cell>
+    </ng-container>
+    <!-- partnerTransportAddress Column -->
+    <ng-container matColumnDef="partnerTransportAddress">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerTransportAddress </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerTransportAddress}} </mat-cell>
+    </ng-container>
+    <!-- partnerMailName Column -->
+    <ng-container matColumnDef="partnerMailName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMailName </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMailName}} </mat-cell>
+    </ng-container>
+    <!-- partnerMailZip Column -->
+    <ng-container matColumnDef="partnerMailZip">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMailZip </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMailZip}} </mat-cell>
+    </ng-container>
+    <!-- partnerMailCity Column -->
+    <ng-container matColumnDef="partnerMailCity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMailCity </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMailCity}} </mat-cell>
+    </ng-container>
+    <!-- partnerMailAddress Column -->
+    <ng-container matColumnDef="partnerMailAddress">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMailAddress </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMailAddress}} </mat-cell>
+    </ng-container>
+    <!-- partnerPhone Column -->
+    <ng-container matColumnDef="partnerPhone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerPhone </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerPhone}} </mat-cell>
+    </ng-container>
+    <!-- partnerFax Column -->
+    <ng-container matColumnDef="partnerFax">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerFax </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerFax}} </mat-cell>
+    </ng-container>
+    <!-- partnerMobile Column -->
+    <ng-container matColumnDef="partnerMobile">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerMobile </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerMobile}} </mat-cell>
+    </ng-container>
+    <!-- partnerEmail Column -->
+    <ng-container matColumnDef="partnerEmail">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerEmail </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerEmail}} </mat-cell>
+    </ng-container>
+    <!-- partnerWebsite Column -->
+    <ng-container matColumnDef="partnerWebsite">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerWebsite </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerWebsite}} </mat-cell>
+    </ng-container>
+    <!-- partnerPicture Column -->
+    <ng-container matColumnDef="partnerPicture">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerPicture </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerPicture}} </mat-cell>
+    </ng-container>
+    <!-- partnerSale Column -->
+    <ng-container matColumnDef="partnerSale">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerSale </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerSale}} </mat-cell>
+    </ng-container>
+    <!-- partnerSalePremium Column -->
+    <ng-container matColumnDef="partnerSalePremium">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerSalePremium </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerSalePremium}} </mat-cell>
+    </ng-container>
+    <!-- partnerContract Column -->
+    <ng-container matColumnDef="partnerContract">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerContract </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerContract}} </mat-cell>
+    </ng-container>
+    <!-- partnerWarriant Column -->
+    <ng-container matColumnDef="partnerWarriant">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerWarriant </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerWarriant}} </mat-cell>
+    </ng-container>
+    <!-- deleted Column -->
+    <ng-container matColumnDef="deleted">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> deleted </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.deleted}} </mat-cell>
+    </ng-container>
+    <!-- partnerLat Column -->
+    <ng-container matColumnDef="partnerLat">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerLat </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerLat}} </mat-cell>
+    </ng-container>
+    <!-- partnerLng Column -->
+    <ng-container matColumnDef="partnerLng">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerLng </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerLng}} </mat-cell>
+    </ng-container>
+    <!-- partnerRemoteId Column -->
+    <ng-container matColumnDef="partnerRemoteId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerRemoteId </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerRemoteId}} </mat-cell>
+    </ng-container>
+    <!-- partnerLang Column -->
+    <ng-container matColumnDef="partnerLang">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> partnerLang </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.partnerLang}} </mat-cell>
+    </ng-container>
+    <!-- storeId Column -->
+    <ng-container matColumnDef="storeId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> storeId </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.storeId}} </mat-cell>
+    </ng-container>
+    <!-- password Column -->
+    <ng-container matColumnDef="password">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> password </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.password}} </mat-cell>
+    </ng-container>
+    <!-- rank Column -->
+    <ng-container matColumnDef="rank">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> rank </mat-header-cell>
+      <mat-cell *matCellDef="let partner"> {{partner.rank}} </mat-cell>
+    </ng-container>
+
+    
+    <!-- Options Column -->
+    <ng-container matColumnDef="options">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> options </mat-header-cell>
+      <mat-cell *matCellDef="let partner">{{ partner.options }}
+        <button mat-mini-fab color="accent" (click)="showPartner(partner.id)" matTooltip="View">
+          <mat-icon aria-label="View">visibility</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="editPartner(partner.id)" matTooltip="Edit">
+          <mat-icon aria-label="Edit">mode_edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" (click)="removePartner(partner)" matTooltip="Delete">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

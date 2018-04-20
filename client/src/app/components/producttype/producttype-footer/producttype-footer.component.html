@@ -1,0 +1,9 @@
+<mat-divider></mat-divider>
+<footer class="footer" *ngIf="producttypes">
+  <span class="producttypes-count">
+    <mat-panel-description>
+      <strong>{{producttypes.length}}</strong> {{producttypes.length == 1 ? 'producttype' : 'producttypes'}} altogether
+    </mat-panel-description>
+  </span>
+</footer>
+<mat-divider></mat-divider>

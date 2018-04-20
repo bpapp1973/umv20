@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app.routing.module';
 /* imports start */
 import { CarModule } from './modules/car/car.module';
 import { InvoiceModule } from './modules/invoice/invoice.module';
+import { PartnerModule } from './modules/partner/partner.module';
+import { ProductTypeModule } from './modules/producttype/producttype.module';
 /* imports end */
 
 @NgModule({
@@ -32,6 +34,8 @@ import { InvoiceModule } from './modules/invoice/invoice.module';
     /* imports array start */
     CarModule,
     InvoiceModule,
+    PartnerModule,
+    ProductTypeModule,
     /* imports array end */
   ],
   exports: [

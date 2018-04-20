@@ -1,0 +1,5 @@
+<mat-form-field>
+  <input matInput [matDatepicker]="$FIELD_NAME$" placeholder="$FIELD_NAME$" [value]="$MODEL_NAME$.$FIELD_NAME$" $IS_DISABLED$>
+  <mat-datepicker-toggle matSuffix [for]="$FIELD_NAME$"></mat-datepicker-toggle>
+  <mat-datepicker #$FIELD_NAME$></mat-datepicker>
+</mat-form-field>

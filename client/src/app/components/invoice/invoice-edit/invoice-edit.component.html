@@ -1,123 +1,123 @@
 <h2 mat-dialog-title>Edit Invoice</h2>
 <div mat-dialog-content>
     <mat-form-field>
-    <input matInput [(ngModel)]="invoice.id" name="id" placeholder="id" disabled>
+    <input matInput [(ngModel)]="invoice.id" name="id" type="number" placeholder="id" disabled  required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceType" name="invoiceType" placeholder="invoiceType" >
+    <input matInput [(ngModel)]="invoice.invoiceType" name="invoiceType" type="number" placeholder="invoiceType"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceTypeName" name="invoiceTypeName" placeholder="invoiceTypeName" >
+    <input matInput [(ngModel)]="invoice.invoiceTypeName" name="invoiceTypeName" type="text" placeholder="invoiceTypeName"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceWarehouseMove" name="invoiceWarehouseMove" placeholder="invoiceWarehouseMove" >
+    <input matInput [(ngModel)]="invoice.invoiceWarehouseMove" name="invoiceWarehouseMove" type="number" placeholder="invoiceWarehouseMove"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoicePartnerId" name="invoicePartnerId" placeholder="invoicePartnerId" >
+    <input matInput [(ngModel)]="invoice.invoicePartnerId" name="invoicePartnerId" type="number" placeholder="invoicePartnerId"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoicePartnerName" name="invoicePartnerName" placeholder="invoicePartnerName" >
+    <input matInput [(ngModel)]="invoice.invoicePartnerName" name="invoicePartnerName" type="text" placeholder="invoicePartnerName"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoicePartnerTransport" name="invoicePartnerTransport" placeholder="invoicePartnerTransport" >
+    <input matInput [(ngModel)]="invoice.invoicePartnerTransport" name="invoicePartnerTransport" type="number" placeholder="invoicePartnerTransport"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoicePaymode" name="invoicePaymode" placeholder="invoicePaymode" >
+    <input matInput [(ngModel)]="invoice.invoicePaymode" name="invoicePaymode" type="number" placeholder="invoicePaymode"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceStartDate" name="invoiceStartDate" placeholder="invoiceStartDate" >
+    <input matInput [(ngModel)]="invoice.invoiceStartDate" name="invoiceStartDate" type="date" placeholder="invoiceStartDate"   >
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceEndDate" name="invoiceEndDate" placeholder="invoiceEndDate" >
+    <input matInput [(ngModel)]="invoice.invoiceEndDate" name="invoiceEndDate" type="date" placeholder="invoiceEndDate"   >
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoicePayDate" name="invoicePayDate" placeholder="invoicePayDate" >
+    <input matInput [(ngModel)]="invoice.invoicePayDate" name="invoicePayDate" type="date" placeholder="invoicePayDate"   >
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceCurrency" name="invoiceCurrency" placeholder="invoiceCurrency" >
+    <input matInput [(ngModel)]="invoice.invoiceCurrency" name="invoiceCurrency" type="text" placeholder="invoiceCurrency"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoicePricelist" name="invoicePricelist" placeholder="invoicePricelist" >
+    <input matInput [(ngModel)]="invoice.invoicePricelist" name="invoicePricelist" type="number" placeholder="invoicePricelist"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceNetto" name="invoiceNetto" placeholder="invoiceNetto" >
+    <input matInput [(ngModel)]="invoice.invoiceNetto" name="invoiceNetto" type="number" placeholder="invoiceNetto"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceVat" name="invoiceVat" placeholder="invoiceVat" >
+    <input matInput [(ngModel)]="invoice.invoiceVat" name="invoiceVat" type="number" placeholder="invoiceVat"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceBrutto" name="invoiceBrutto" placeholder="invoiceBrutto" >
+    <input matInput [(ngModel)]="invoice.invoiceBrutto" name="invoiceBrutto" type="number" placeholder="invoiceBrutto"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceId" name="invoiceId" placeholder="invoiceId" >
+    <input matInput [(ngModel)]="invoice.invoiceId" name="invoiceId" type="number" placeholder="invoiceId"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceNumber" name="invoiceNumber" placeholder="invoiceNumber" >
+    <input matInput [(ngModel)]="invoice.invoiceNumber" name="invoiceNumber" type="text" placeholder="invoiceNumber"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceUserId" name="invoiceUserId" placeholder="invoiceUserId" >
+    <input matInput [(ngModel)]="invoice.invoiceUserId" name="invoiceUserId" type="number" placeholder="invoiceUserId"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.companyId" name="companyId" placeholder="companyId" >
+    <input matInput [(ngModel)]="invoice.companyId" name="companyId" type="number" placeholder="companyId"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.deleted" name="deleted" placeholder="deleted" >
+    <input matInput [(ngModel)]="invoice.deleted" name="deleted" type="number" placeholder="deleted"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceCreated" name="invoiceCreated" placeholder="invoiceCreated" >
+    <input matInput [(ngModel)]="invoice.invoiceCreated" name="invoiceCreated" type="text" placeholder="invoiceCreated"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceNote" name="invoiceNote" placeholder="invoiceNote" >
+    <input matInput [(ngModel)]="invoice.invoiceNote" name="invoiceNote" type="text" placeholder="invoiceNote"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceBenefitCode" name="invoiceBenefitCode" placeholder="invoiceBenefitCode" >
+    <input matInput [(ngModel)]="invoice.invoiceBenefitCode" name="invoiceBenefitCode" type="text" placeholder="invoiceBenefitCode"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.transferPrice" name="transferPrice" placeholder="transferPrice" >
+    <input matInput [(ngModel)]="invoice.transferPrice" name="transferPrice" type="number" placeholder="transferPrice"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.transferDate" name="transferDate" placeholder="transferDate" >
+    <input matInput [(ngModel)]="invoice.transferDate" name="transferDate" type="text" placeholder="transferDate"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.invoiceSale" name="invoiceSale" placeholder="invoiceSale" >
+    <input matInput [(ngModel)]="invoice.invoiceSale" name="invoiceSale" type="number" placeholder="invoiceSale"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.html" name="html" placeholder="html" >
+    <input matInput [(ngModel)]="invoice.html" name="html" type="number" placeholder="html"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.userNote" name="userNote" placeholder="userNote" >
+    <input matInput [(ngModel)]="invoice.userNote" name="userNote" type="text" placeholder="userNote"   required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="invoice.emailSend" name="emailSend" placeholder="emailSend" >
+    <input matInput [(ngModel)]="invoice.emailSend" name="emailSend" type="number" placeholder="emailSend"   required>
   </mat-form-field>
 
 

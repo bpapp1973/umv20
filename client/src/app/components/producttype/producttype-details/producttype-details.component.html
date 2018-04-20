@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>ProductType Details</h2>
+  <form>
+      <mat-form-field>
+    <input matInput [(ngModel)]="producttype.id" name="id" type="number" placeholder="id" disabled>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="producttype.productTypeName" name="productTypeName" type="text" placeholder="productTypeName" disabled>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="producttype.productTypeDeleted" name="productTypeDeleted" type="number" placeholder="productTypeDeleted" disabled>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="producttype.companyId" name="companyId" type="number" placeholder="companyId" disabled>
+  </mat-form-field>
+
+
+  </form>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,9 @@
+<mat-divider></mat-divider>
+<footer class="footer" *ngIf="partners">
+  <span class="partners-count">
+    <mat-panel-description>
+      <strong>{{partners.length}}</strong> {{partners.length == 1 ? 'partner' : 'partners'}} altogether
+    </mat-panel-description>
+  </span>
+</footer>
+<mat-divider></mat-divider>

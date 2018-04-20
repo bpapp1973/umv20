@@ -1,3 +1,3 @@
   <mat-form-field>
-    <input matInput [(ngModel)]="$MODEL_NAME$.$FIELD_NAME$" name="FIELD_NAME$" placeholder="$FIELD_NAME$" disabled>
+    <input matInput [(ngModel)]="$MODEL_NAME$.$FIELD_NAME$" name="$FIELD_NAME$" type="$FIELD_TYPE$" placeholder="$FIELD_NAME$" disabled>
   </mat-form-field>

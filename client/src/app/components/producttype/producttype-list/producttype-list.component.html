@@ -1,0 +1,55 @@
+<div class="table-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<div class="table-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+      <mat-cell *matCellDef="let producttype"> {{producttype.id}} </mat-cell>
+    </ng-container>
+    <!-- productTypeName Column -->
+    <ng-container matColumnDef="productTypeName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> productTypeName </mat-header-cell>
+      <mat-cell *matCellDef="let producttype"> {{producttype.productTypeName}} </mat-cell>
+    </ng-container>
+    <!-- productTypeDeleted Column -->
+    <ng-container matColumnDef="productTypeDeleted">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> productTypeDeleted </mat-header-cell>
+      <mat-cell *matCellDef="let producttype"> {{producttype.productTypeDeleted}} </mat-cell>
+    </ng-container>
+    <!-- companyId Column -->
+    <ng-container matColumnDef="companyId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> companyId </mat-header-cell>
+      <mat-cell *matCellDef="let producttype"> {{producttype.companyId}} </mat-cell>
+    </ng-container>
+
+    
+    <!-- Options Column -->
+    <ng-container matColumnDef="options">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> options </mat-header-cell>
+      <mat-cell *matCellDef="let producttype">{{ producttype.options }}
+        <button mat-mini-fab color="accent" (click)="showProductType(producttype.id)" matTooltip="View">
+          <mat-icon aria-label="View">visibility</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="editProductType(producttype.id)" matTooltip="Edit">
+          <mat-icon aria-label="Edit">mode_edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" (click)="removeProductType(producttype)" matTooltip="Delete">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

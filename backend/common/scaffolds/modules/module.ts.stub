@@ -12,7 +12,7 @@ import { $MODEL_NAME_CAMEL$FooterComponent } from '../../components/$MODEL_NAME$
 import { $MODEL_NAME_CAMEL$DetailsComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-details/$MODEL_NAME$-details.component';
 import { $MODEL_NAME_CAMEL$EditComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-edit/$MODEL_NAME$-edit.component';
 import { $MODEL_NAME_CAMEL$CreateComponent } from '../../components/$MODEL_NAME$/$MODEL_NAME$-create/$MODEL_NAME$-create.component';
-import { ConfirmationDialogComponent } from '../../components/common/confirmation-dialog/confirmation-dialog.component';
+// import { ConfirmationDialogComponent } from '../../components/common/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,13 +31,14 @@ import { ConfirmationDialogComponent } from '../../components/common/confirmatio
       $MODEL_NAME_CAMEL$DetailsComponent,
       $MODEL_NAME_CAMEL$EditComponent,
       $MODEL_NAME_CAMEL$CreateComponent,
-      ConfirmationDialogComponent
+//      ConfirmationDialogComponent
     ],
   providers: [$MODEL_NAME_CAMEL$Service],
   entryComponents: [
     $MODEL_NAME_CAMEL$DetailsComponent,
     $MODEL_NAME_CAMEL$EditComponent,
     $MODEL_NAME_CAMEL$CreateComponent,
-    ConfirmationDialogComponent]
+//    ConfirmationDialogComponent,
+    ]
 })
 export class $MODEL_NAME_CAMEL$Module { }
